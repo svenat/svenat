@@ -17,7 +17,7 @@ creditSurface = pygame.Surface((scWidth, 50))
 creditSurface.fill('white')
 
 planetU = pygame.image.load('/Users/sventjallingii/PycharmProjects/svenat/IMAGES/Uranus.png')
-planetStart = pygame.image.load('/Users/sventjallingii/PycharmProjects/svenat/IMAGES/Start img Earth.jpg')
+planetStart = pygame.image.load('/Users/sventjallingii/PycharmProjects/svenat/IMAGES/STart the Game.png')
 
 
 
@@ -32,7 +32,7 @@ while True:
 			exit()
 
 
-	mainSurface.blit(planetStart, (-200, 0))
+	mainSurface.blit(planetStart, (-200, ))
 	mainSurface.blit(creditSurface, (0, 550))
 
 	pygame.display.update()
