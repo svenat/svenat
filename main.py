@@ -32,7 +32,7 @@ while True:
 			exit()
 
 
-	mainSurface.blit(planetStart, (-200, ))
+	mainSurface.blit(planetStart, (-200, -200))
 	mainSurface.blit(creditSurface, (0, 550))
 
 	pygame.display.update()
