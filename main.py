@@ -5,19 +5,21 @@ from pygame.examples.scrap_clipboard import screen
 from pygame.examples.sprite_texture import clock
 
 pygame.init()
-scWidth = 800
-scHeight = 600
+scWidth = 960
+scHeight = 540
 mainSurface = pygame.display.set_mode((scWidth, scHeight))
 
 pygame.display.set_caption('Memory Game')
 fsPS = pygame.time.Clock()
 
+startFont = pygame.font.Font('FONTS/SaucerFont.ttf', 50)
+startText = startFont.render('Start The Game', False, 'Red')
 
-creditSurface = pygame.Surface((scWidth, 50))
+creditSurface = pygame.Surface((scWidth, 30))
 creditSurface.fill('white')
 
-planetU = pygame.image.load('/Users/sventjallingii/PycharmProjects/svenat/IMAGES/Uranus.png')
-planetStart = pygame.image.load('/Users/sventjallingii/PycharmProjects/svenat/IMAGES/STart the Game.png')
+planetU = pygame.image.load('IMAGES/Uranus.png')
+planetStart = pygame.image.load('IMAGES/STart the Game.png')
 
 
 
@@ -32,8 +34,9 @@ while True:
 			exit()
 
 
-	mainSurface.blit(planetStart, (-200, -200))
-	mainSurface.blit(creditSurface, (0, 550))
+	mainSurface.blit(planetStart, (0, 150))
+	mainSurface.blit(creditSurface, (0, 510))
+	mainSurface.blit(startText, (360, 50))
 
 	pygame.display.update()
 	clock.tick(60)
