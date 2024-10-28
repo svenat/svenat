@@ -10,9 +10,7 @@ mainBackground = pygame.image.load('IMAGES/Black Background.jpg')
 pygame.display.set_caption('TTTEST')
 mainFont = pygame.font.Font('FONTS/SaucerFont.ttf', 20)
 
-
-class BUTTON():
-
+class BUTTON:
     def __init__(self, image, xPos, yPos, textInput):
         self.image = image
         self.xPos = xPos
@@ -21,10 +19,6 @@ class BUTTON():
         self.textInput = textInput
         self.text = mainFont.render(self.textInput, True, 'Red')
         self.textRect = self.text.get_rect(center=(self.xPos, self.yPos))
-
-    def update(self):
-        mainSurface.blit(self.image, self.rect)
-        mainSurface.blit(self.text, self.textRect)
 
     def checkForInput(self, position):
         # Print message if button is clicked
@@ -45,7 +39,7 @@ class BUTTON():
 
 # Load and set up button image
 buttonSurface = pygame.image.load('IMAGES/STart the Game.png')
-buttonSurface = pygame.transform.scale(buttonSurface, (scWidth, 500))
+buttonSurface = pygame.transform.scale(buttonSurface, (400, 200))  # Adjusted button size
 button = BUTTON(buttonSurface, 480, 270, "Click the earth")
 
 while True:
@@ -56,9 +50,9 @@ while True:
         if event.type == pygame.MOUSEBUTTONDOWN:
             button.checkForInput(pygame.mouse.get_pos())
 
-    mainSurface.blit(mainBackground, (100, 100))
+    mainSurface.blit(mainBackground, (0, 0))  # Changed to (0, 0) to cover the screen
 
     button.changeColor(pygame.mouse.get_pos())
-    BUTTON.update()
+    button.update(mainSurface)
 
     pygame.display.update()
